@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" layoutX="2.0" prefHeight="598.0" prefWidth="700.0" stylesheets="@../fonts/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MyProfilePaneView">
+    <children>
+        <VBox fx:id="infoDisplay" alignment="CENTER" prefHeight="488.0" prefWidth="446.0" spacing="15.0" VBox.vgrow="ALWAYS">
+            <padding><Insets bottom="25" left="25" right="25" top="25" /></padding>
+            <children>
+            <VBox alignment="CENTER" spacing="2.0">
+               <children>
+                      <Label text="Welcome,">
+                          <font>
+                              <Font name="System Bold" size="41.0" />
+                          </font>
+                      </Label>
+                  <Label fx:id="emailLabel" text="email@address.com">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="CENTER" prefHeight="150.0" prefWidth="100.0" spacing="8.0">
+                     <children>
+                        <Label fx:id="dateLabel" text="You have been a PinPoint user since &lt;Date&gt;.">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="instructionsLabel" text="Click on Cities &amp; Attractions to get started.">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <Hyperlink fx:id="managerLink" onAction="#handleManager" text="View Manager Profile">
+               <font>
+                  <Font size="18.0" />
+               </font></Hyperlink>
+            </children>
+        </VBox>
+    </children>
+</VBox>

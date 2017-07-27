@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vBox" alignment="CENTER" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomeView">
+    <children>
+      <BorderPane fx:id="borderPane" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <left>
+                <AnchorPane fx:id="anchorPane" minWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: grey; -fx-background-radius: 8;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" fillWidth="false" layoutX="14.0" layoutY="14.0" prefWidth="100.0" spacing="25" stylesheets="@../fonts/style.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
+                           <image>
+                              <Image url="@../../resources/images/PinPointBase.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="cityButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleCity" prefHeight="100.0" prefWidth="110.0" style="-fx-border-radius: 10;" text="Cities" VBox.vgrow="NEVER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="attrButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAttraction" prefHeight="100.0" prefWidth="110.0" text="Attractions" VBox.vgrow="NEVER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding></Button>
+                         <Button fx:id="profileButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleProfile" prefHeight="100.0" prefWidth="110.0" text="Account" VBox.vgrow="NEVER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding></Button>
+                        <AnchorPane prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutY="134.0" prefHeight="39.0" prefWidth="130.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="134.0">
+                                 <children>
+                                    <Label fx:id="emailLabel" stylesheets="@../fonts/whiteText.css" text="Logged In" textFill="WHITE">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Button id="logoutButton" alignment="CENTER" contentDisplay="CENTER" minHeight="32.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="32.0" prefWidth="110.0" text="Logout" textAlignment="CENTER" textFill="#da4949">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font></Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+                </AnchorPane>
+         </left>
+         <center>
+            <BorderPane BorderPane.alignment="CENTER">
+               <center>
+                      <AnchorPane fx:id="mainPane" maxWidth="1000.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="178.0" layoutY="255.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #F2F3F4; -fx-background-radius: 8;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+                     </children></AnchorPane>
+               </center>
+               <left>
+                      <AnchorPane maxWidth="175.0" minWidth="175.0" prefWidth="175.0" style="-fx-border-color: grey; -fx-border-width: 1 1 1 0; -fx-border-radius: 3 8 8 3; -fx-background-color: #F2F3F4;" BorderPane.alignment="CENTER">
+                     <children>
+                        <StackPane alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox fx:id="linkBox" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" spacing="10">
+                                 <children>
+                                    <Hyperlink fx:id="link1" alignment="CENTER" contentDisplay="CENTER" maxHeight="40.0" minHeight="40.0" opacity="0.75" prefWidth="130.0" stylesheets="@../fonts/hyperlink.css" text="SEARCH" textAlignment="CENTER" textFill="black">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" prefHeight="51.0" prefWidth="67.0" text=" " textAlignment="CENTER">
+                                       <font>
+                                          <Font size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <Hyperlink fx:id="link2" alignment="CENTER" contentDisplay="CENTER" maxHeight="40.0" minHeight="40.0" opacity="0.75" prefHeight="40.0" prefWidth="130.0" stylesheets="@../fonts/hyperlink.css" text="VIEW ALL" textFill="black">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text=" " textAlignment="CENTER">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Hyperlink fx:id="link3" alignment="CENTER" contentDisplay="CENTER" maxHeight="40.0" minHeight="40.0" opacity="0.75" prefWidth="130.0" stylesheets="@../fonts/hyperlink.css" text="ADD" textFill="black">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Hyperlink>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </BorderPane.margin>
+                      </AnchorPane>
+               </left>
+            </BorderPane>
+         </center>
+      </BorderPane>
+    </children>
+</VBox>

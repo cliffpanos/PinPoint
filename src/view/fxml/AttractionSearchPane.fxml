@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" layoutX="2.0" prefHeight="650.0" prefWidth="743.0" stylesheets="@../fonts/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AttractionSearchPaneView">
+    <padding> <Insets left="0" right="0" /></padding>
+    <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="25" VBox.vgrow="NEVER">
+            <children>
+                <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#handleSearch" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/images/Search.png" />
+                    </image>
+                </ImageView>
+                <TextField fx:id="userSearch" promptText="Enter the name of an Attraction" HBox.hgrow="SOMETIMES" />
+                <ChoiceBox fx:id="choiceBox" prefWidth="130.0" style="-fx-background-color: lightGrey;" />
+                <Button mnemonicParsing="false" onAction="#handleSearch" text="Search" />
+            </children>
+            <VBox.margin>
+                <Insets left="30.0" right="30.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="55.0" prefWidth="446.0" spacing="30" VBox.vgrow="NEVER">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="30.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label fx:id="attractionName" text="Attraction Name">
+                            <font>
+                                <Font name="System Bold" size="36.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="rating" text="Rating">
+                        </Label>
+                    </children>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+                </HBox>
+                <Hyperlink fx:id="review" onAction="#handleReview" text="Leave a Review →" />
+            </children>
+            <padding>
+                <Insets left="30.0" right="30.0" />
+            </padding>
+        </HBox>
+        <VBox fx:id="infoDisplay" alignment="TOP_CENTER" prefHeight="388.0" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox alignment="CENTER" prefWidth="487.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <AnchorPane maxWidth="220.0" minWidth="100.0" style="-fx-border-width: 0 0 0 0;" HBox.hgrow="ALWAYS">
+                            <children>
+                        <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox spacing="25.0" style="-fx-background-color: white; -fx-border-color: lightGrey; -fx-border-width: 1 1 0 1;" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <GridPane alignment="TOP_CENTER" minHeight="100.0" vgap="15.0" VBox.vgrow="ALWAYS">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="80.0" prefWidth="80.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="30.0" prefHeight="50.0" valignment="CENTER" vgrow="ALWAYS" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Address">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Hours" GridPane.rowIndex="1" />
+                                          <Text fx:id="hoursLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="None listed" wrappingWidth="125.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="Helvetica Neue Light" size="13.0" />
+                                             </font></Text>
+                                          <Label fx:id="contactTypeLabel" text="Contact" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font></Label>
+                                          <Text fx:id="addressLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="No Address" wrappingWidth="125.0" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font name="Helvetica Neue Light" size="13.0" />
+                                             </font></Text>
+                                          <Text fx:id="contactLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Not available" wrappingWidth="125.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="Helvetica Neue Light" size="13.0" />
+                                             </font></Text>
+                                       </children>
+                                    </GridPane>
+                                    <HBox alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Label maxWidth="80.0" minWidth="80.0" prefWidth="80.0" text="Description" HBox.hgrow="ALWAYS" />
+                                          <Text fx:id="descriptionLabel" lineSpacing="3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Long description of some comments and things about this attraction" wrappingWidth="125.0" HBox.hgrow="SOMETIMES">
+                                             <font>
+                                                <Font name="Helvetica Neue Light" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox VBox.vgrow="NEVER">
+                                       <children>
+                                          <Label text="Categories">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="8.0" left="5.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                                        <ListView fx:id="categoryList" nodeOrientation="LEFT_TO_RIGHT" VBox.vgrow="SOMETIMES" />
+                           </children>
+                        </VBox>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="266.0" prefWidth="333.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <ListView fx:id="reviewsList" layoutX="-60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                    <padding>
+                        <Insets left="30.0" right="30.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT" minHeight="70.0" prefHeight="70.0" prefWidth="200.0" spacing="40.0" VBox.vgrow="NEVER">
+                    <children>
+                        <RadioButton mnemonicParsing="false" selected="true" text="Rating High - Low" userData="rating DESC">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="sort" />
+                            </toggleGroup></RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Rating Low - High" toggleGroup="$sort" userData="rating ASC" />
+                    </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

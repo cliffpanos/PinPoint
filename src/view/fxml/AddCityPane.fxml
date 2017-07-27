@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" layoutX="2.0" prefHeight="650.0" prefWidth="700.0" stylesheets="@../fonts/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddCityPaneView">
+    <children>
+        <VBox fx:id="infoDisplay" alignment="TOP_CENTER" prefHeight="488.0" prefWidth="446.0" spacing="20" VBox.vgrow="ALWAYS">
+            <padding><Insets bottom="25" left="25" right="25" top="25" /></padding>
+            <children>
+                <Label text="Add A City" VBox.vgrow="NEVER">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Label>
+            <GridPane alignment="CENTER" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="262.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="newCityName" GridPane.columnIndex="1" />
+                  <TextField fx:id="newCityCountry" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="newCityState" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Name*" />
+                  <Label text="Country*" GridPane.rowIndex="1" />
+                  <Label text="State" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="newCityRating" minWidth="120.0" prefHeight="25.0" promptText="Select..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Rating*" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <TextArea fx:id="commentArea" prefHeight="200.0" prefWidth="200.0" promptText="*Enter comments about the City here..." VBox.vgrow="ALWAYS" />
+            <Button fx:id="submit" mnemonicParsing="false" onAction="#handleSubmit" prefWidth="275.0" text="Submit for Review" textAlignment="CENTER" />
+            </children>
+        </VBox>
+    </children>
+</VBox>

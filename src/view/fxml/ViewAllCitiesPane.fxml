@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" layoutX="2.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@../fonts/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ViewAllCitiesPaneView">
+    <children>
+        <VBox fx:id="infoDisplay" alignment="TOP_CENTER" prefHeight="488.0" prefWidth="446.0" spacing="20" VBox.vgrow="ALWAYS">
+            <padding><Insets bottom="25.0" left="25.0" right="25.0" top="25.0" /></padding>
+            <children>
+                <Label text="All Cities" VBox.vgrow="NEVER">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Label>
+            <TableView fx:id="cityTable" editable="true" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="cityCol" prefWidth="107.0" text="City" />
+                <TableColumn fx:id="avgRatingCol" prefWidth="95.0" text="Average Rating" />
+                  <TableColumn fx:id="countRatingCol" prefWidth="89.0" text="# Of Ratings" />
+                  <TableColumn fx:id="countAttrCol" prefWidth="104.0" text="# Of Attractions" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <GridPane minHeight="30.0" prefHeight="33.0" prefWidth="396.0" VBox.vgrow="NEVER">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <RadioButton mnemonicParsing="false" selected="true" text="A-Z" userData="cityName ASC">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sort" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Z-A" toggleGroup="$sort" userData="cityName DESC" GridPane.columnIndex="1" />
+                  <RadioButton mnemonicParsing="false" text="Rating" toggleGroup="$sort" userData="avgRating DESC" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
+            </children>
+        </VBox>
+    </children>
+</VBox>

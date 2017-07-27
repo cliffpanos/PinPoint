@@ -1,0 +1,170 @@
+
+@font-face {
+	src: url('SFLight.otf');
+}
+
+.text {
+    -fx-font-family: 'Helvetica';
+}
+
+
+
+.label {
+	-fx-font-family: 'SFLight';
+	-fx-text-fill: '#3A414D';
+}
+
+.button {
+    -fx-font-family: 'SFLight';
+	-fx-text-fill: white;
+	-fx-background-color: '#3A414D';
+}
+
+.button:selected {
+    -fx-border-color: white;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+.scroll-bar {
+	-fx-background-color: lightGrey;
+    -fx-background-color: null;
+
+}
+.scroll-bar:vertical {
+    -fx-opacity: 0;
+    -fx-padding:-7;
+    -fx-background-color: null;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-button,
+.table-view *.scroll-bar:horizontal *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.table-view *.scroll-bar:vertical *.increment-arrow,
+.table-view *.scroll-bar:vertical *.decrement-arrow {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+.table-view .filler {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+.combo-box {
+	-fx-background-color: lightGrey;
+}
+
+.table-view {
+	-fx-background-radius: 5;
+	-fx-focus-color: lightGrey;
+	-fx-faint-focus-color: lightGrey;
+}
+.table-view .column-header {
+	-fx-background-color: lightGrey;
+	-fx-background-radius: 0;
+	-fx-focus-color: transparent;
+	-fx-faint-focus-color: transparent;
+}
+
+
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}
+
+
+
+
+.table-row-cell:selected {
+    -fx-background-color: '#99CCFF'; /*#009BFA';
+    /*-fx-background-insets: 1;*/
+    -fx-background-radius: 1;
+    /*-fx-border-color: '#3F8EF2';*/
+    /*-fx-border-width: 1;*/
+    /*-fx-border-radius: 2;*/
+}
+
+.list-cell:selected {
+    /*-fx-background-color: '#3F8EF2'; /*#009BFA';*/*/
+    -fx-background-radius: 1;
+}
+
+.radio-button:selected .radio {
+    -fx-background-color: '#3F8EF2';
+	-fx-background-insets: 0.5;
+}
+
+.radio-button .radio {
+	-fx-background-insets: 0.5;
+	-fx-border-color: lightGrey;
+	-fx-border-radius: 20;
+}
+
+.radio-button:selected .dot {
+	-fx-background-color: white;
+	-fx-background-insets: 1;
+
+}
+
+.hyperlink {
+    	-fx-font-family: 'Helvetica';
+	-fx-text-fill: '#3F8EF2';
+
+}
+
+.anchor-pane {
+	-fx-focus-color: transparent;
+	-fx-faint-focus-color: transparent;
+}
+
+.list-view {
+	-fx-focus-color: lightGrey;
+	-fx-faint-focus-color: lightGrey;
+	-fx-border-color: transparent;
+
+}
+.list-view .scroll-bar:horizontal {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.list-view .scroll-bar:horizontal .increment-arrow,
+.list-view .scroll-bar:horizontal .decrement-arrow,
+.list-view .scroll-bar:horizontal .increment-button,
+.list-view .scroll-bar:horizontal .decrement-button {
+    -fx-padding:0;
+}
+
+.scroll-pane {
+	-fx-focus-color: transparent;
+	-fx-faint-focus-color: transparent;
+}
+
+//.root {
+//	-fx-focus-color: transparent;
+//	-fx-faint-focus-color: transparent;
+//}

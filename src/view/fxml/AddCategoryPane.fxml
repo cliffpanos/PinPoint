@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" layoutX="2.0" prefHeight="650.0" prefWidth="750.0" stylesheets="@../fonts/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddCategoryPaneView">
+    <children>
+        <VBox fx:id="infoDisplay" alignment="TOP_CENTER" prefHeight="488.0" prefWidth="410.0" spacing="35.0" VBox.vgrow="ALWAYS">
+            <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
+            <children>
+            <HBox>
+               <children>
+                      <Hyperlink fx:id="back" onAction="#handleBack" text="← Back" />
+               </children>
+            </HBox>
+                <Label fx:id="title" text="Add Category" VBox.vgrow="NEVER">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Label>
+            <TextField fx:id="categoryField" maxWidth="325.0" prefHeight="30.0" prefWidth="300.0" promptText="New category name..." />
+            <Button fx:id="submit" mnemonicParsing="false" onAction="#handleSubmit" prefHeight="30.0" prefWidth="200.0" text="Create New Category" />
+            </children>
+        </VBox>
+    </children>
+</VBox>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" layoutX="2.0" prefHeight="650.0" prefWidth="743.0" stylesheets="@../fonts/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CitySearchPaneView">
+    <padding> <Insets left="0" right="0" /></padding>
+    <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="25" VBox.vgrow="NEVER">
+            <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#handleSearch" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/images/Search.png" />
+               </image>
+            </ImageView>
+                <TextField fx:id="userSearch" promptText="Enter the name of a City" HBox.hgrow="SOMETIMES" />
+                <ChoiceBox fx:id="allCities" prefWidth="130.0" style="-fx-background-color: lightGrey;" />
+            <Button mnemonicParsing="false" onAction="#handleSearch" text="Search" />
+            </children>
+         <VBox.margin>
+            <Insets left="30.0" right="30.0" />
+         </VBox.margin>
+        </HBox>
+      <HBox alignment="CENTER" prefHeight="55.0" prefWidth="446.0" spacing="30" VBox.vgrow="NEVER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="30.0" HBox.hgrow="ALWAYS">
+               <children>
+                      <Label fx:id="cityName" text="City Name">
+                          <font>
+                              <Font name="System Bold" size="36.0" />
+                          </font>
+                      </Label>
+                      <Label fx:id="rating" text="Rating">
+                </Label>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </HBox>
+            <Hyperlink fx:id="review" onAction="#handleReview" text="Leave a Review →" />
+         </children>
+         <padding>
+            <Insets left="30.0" right="30.0" />
+         </padding>
+      </HBox>
+        <VBox fx:id="infoDisplay" alignment="TOP_CENTER" prefHeight="388.0" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox alignment="CENTER" prefWidth="487.0" VBox.vgrow="ALWAYS">
+                    <children>
+                  <AnchorPane prefWidth="100.0" style="-fx-border-width: 0 1 0 0; -fx-border-color: lightgrey;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ListView fx:id="attractionsList" nodeOrientation="LEFT_TO_RIGHT" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="266.0" prefWidth="333.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ListView fx:id="reviewsList" layoutX="-60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                    </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+                </HBox>
+                <HBox alignment="CENTER" minHeight="70.0" prefHeight="70.0" prefWidth="200.0" spacing="40.0" VBox.vgrow="NEVER">
+                    <children>
+                  <HBox alignment="CENTER_LEFT" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <ComboBox fx:id="categoryCombo" minWidth="120.0" prefWidth="150.0" promptText="Category" />
+                     </children>
+                  </HBox>
+                        <RadioButton mnemonicParsing="false" selected="true" text="Rating High - Low" userData="rating DESC">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="sort" />
+                            </toggleGroup></RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Rating Low - High" toggleGroup="$sort" userData="rating ASC" />
+                    </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

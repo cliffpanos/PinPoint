@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" layoutX="2.0" prefHeight="650.0" prefWidth="750.0" stylesheets="@../fonts/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MyReviewsPaneView">
+    <children>
+        <VBox fx:id="infoDisplay" alignment="TOP_CENTER" prefHeight="488.0" prefWidth="446.0" spacing="25.0" VBox.vgrow="ALWAYS">
+            <padding><Insets bottom="25" left="25" right="25" top="25" /></padding>
+            <children>
+                <Label text="My Reviews" VBox.vgrow="NEVER">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="reviewsTable" prefHeight="294.0" prefWidth="396.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="nameCol" prefWidth="85.0" text="City / Attraction" />
+                        <TableColumn fx:id="ratingCol" prefWidth="74.0" text="Rating" />
+                        <TableColumn fx:id="commentCol" prefWidth="185.0" text="Comment" />
+                        <TableColumn fx:id="editCol" prefWidth="51.0" text="Manage" />
+                    </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+                </TableView>
+                <GridPane minHeight="30.0" prefHeight="33.0" prefWidth="396.0" VBox.vgrow="NEVER">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <RadioButton mnemonicParsing="false" selected="true" text="Rating High-Low" userData="rating DESC">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="sort" />
+                            </toggleGroup></RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Rating Low-High" toggleGroup="$sort" userData="rating ASC" GridPane.columnIndex="1" />
+                    </children>
+                </GridPane>
+            </children>
+        </VBox>
+    </children>
+</VBox>

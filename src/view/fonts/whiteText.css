@@ -1,0 +1,13 @@
+.label {
+	-fx-font-family: 'SFLight';
+	-fx-text-fill: white;
+}
+
+.text {
+    	-fx-font-family: 'Helvetica';
+}
+
+.button {
+	-fx-text-fill: white;
+}
+

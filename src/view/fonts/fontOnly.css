@@ -1,0 +1,18 @@
+
+@font-face {
+	src: url('SFLight.otf');
+}
+
+.text {
+    	-fx-font-family: 'Helvetica';
+}
+
+
+
+.label {
+	-fx-font-family: 'Helvetica';
+}
+
+.button {
+    	-fx-font-family: 'Helvetica';
+}
